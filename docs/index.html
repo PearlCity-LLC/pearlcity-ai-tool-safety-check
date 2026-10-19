@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is this AI-built tool safe? Free GitHub repo health check</title>
+<meta name="description" content="Paste a GitHub link, get a red / amber / green card: is it maintained, and is it reasonably safe to install? Runs in your browser.">
+<style>
+body{font:16px/1.5 system-ui,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;color:#1d1d1f}
+form{display:flex;gap:.5rem}input{flex:1;padding:.7rem;font-size:1rem;border:1px solid #bbb;border-radius:8px}
+button{padding:.7rem 1.1rem;font-size:1rem;border:0;border-radius:8px;background:#1d1d1f;color:#fff;cursor:pointer}
+.card{margin-top:1.5rem;border-radius:14px;padding:1.2rem 1.4rem;border:2px solid}
+.green{border-color:#1a9c4a;background:#effaf3}.amber{border-color:#d98b00;background:#fff7e6}.red{border-color:#c62828;background:#fdecec}
+.light{font-size:1.6rem;font-weight:700}table{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.92rem}
+td{border-top:1px solid #0002;padding:.35rem .3rem;vertical-align:top}.muted{color:#666;font-size:.88rem}
+footer{margin-top:3rem;color:#777;font-size:.85rem}
+</style>
+<h1>Is this AI-built tool safe to install?</h1>
+<p>Paste a GitHub repo. You get a plain-English <b>red / amber / green</b> card: is it still maintained, and does it pass basic security checks?
+Everything runs in your browser using the public GitHub API and the <a href="https://securityscorecards.dev">OpenSSF Scorecard</a>. Nothing is stored.</p>
+<form id="f"><input id="u" placeholder="https://github.com/owner/repo" aria-label="GitHub repo URL" autofocus><button>Check</button></form>
+<p class="muted">Try: <a href="?repo=ossf/scorecard">ossf/scorecard</a> · <a href="?repo=ggml-org/llama.cpp">ggml-org/llama.cpp</a></p>
+<div id="out"></div>
+<h2>What it checks</h2>
+<ul><li><b>Maintained:</b> last push, weeks with commits in the last 90 days, number of contributors, closed issues, releases.</li>
+<li><b>Trust:</b> license, stars/forks (weak signal), repo age, archived or fork.</li>
+<li><b>Security:</b> OpenSSF Scorecard overall score, dangerous CI workflows, known vulnerabilities, checked-in binaries.</li></ul>
+<p class="muted">A green card is not a guarantee, and a red card isn't proof of malice. It's a 10-second first look so you know when to dig deeper.</p>
+<footer>A free tool by Pearlcity LLC. Not affiliated with GitHub or OpenSSF. GitHub allows about 10 checks per hour per network without a login.</footer>
+<script type="module">
+import { checkRepo } from "./check.js";
+const out = document.getElementById("out"), u = document.getElementById("u");
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const label = { green: "🟢 Green", amber: "🟠 Amber", red: "🔴 Red" };
+async function run(v) {
+  out.innerHTML = "<p>Checking…</p>";
+  const key = "chk:" + v.toLowerCase(), cached = JSON.parse(localStorage.getItem(key) || "null");
+  try {
+    const r = cached && Date.now() - cached.t < 3600e3 ? cached.r : await checkRepo(v);
+    localStorage.setItem(key, JSON.stringify({ t: Date.now(), r }));
+    out.innerHTML = `<div class="card ${r.light}"><div class="light">${label[r.light]} · ${r.score}/100</div>
+      <div><a href="${esc(r.url)}">${esc(r.repo)}</a>: ${esc(r.description || "")}</div>
+      <p><b>${esc(r.verdict)}</b></p>${r.reasons.length ? "<p>Why: " + r.reasons.map(esc).join("; ") + "</p>" : ""}
+      <table>${r.signals.map((s) => `<tr><td>${esc(s.group)}</td><td>${esc(s.label)}</td><td>${s.max ? s.pts + "/" + s.max : "?"}</td><td>${esc(s.detail)}</td></tr>`).join("")}</table>
+      <p class="muted">Checked ${new Date(r.checkedAt).toLocaleString()}</p></div>`;
+    history.replaceState(null, "", "?repo=" + encodeURIComponent(r.repo));
+  } catch (e) { out.innerHTML = `<div class="card amber">${esc(e.message)}</div>`; }
+}
+document.getElementById("f").onsubmit = (e) => { e.preventDefault(); if (u.value.trim()) run(u.value.trim()); };
+const q = new URLSearchParams(location.search).get("repo"); if (q) { u.value = q; run(q); }
+</script></html>

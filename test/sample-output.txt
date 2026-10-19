@@ -1,0 +1,88 @@
+
+GREEN 87/100  ossf/scorecard  (scorecard: yes)
+  Looks maintained and reasonably safe to try. Still read what it asks permission to do.
+  - [Maintained] Last code push: 12/12  0 days ago
+  - [Maintained] Steady activity (weeks with commits, last 90 days): 6/12  6/13 weeks, 60 commits
+  - [Maintained] More than one person: 8/8  194 contributors all-time, 11 active in 90 days
+  - [Maintained] Issues get closed: 7/7  100+ issues/PRs closed in 90 days, 465 open (incl. PRs)
+  - [Maintained] Tagged releases: 6/6  latest 7 days ago
+  - [Trust] Open-source license: 8/8  Apache-2.0
+  - [Trust] Community (stars / forks): 8/8  5,766 stars, 747 forks (stars can be bought; treat as weak)
+  - [Trust] Track record (repo age): 6/6  2200 days old
+  - [Trust] Not archived / not a bare fork: 3/3  original, active repo
+  - [Security] OpenSSF Scorecard overall: 15/18  8.3/10 (scanned 2026-10-18)
+  - [Security] No dangerous CI workflows: 4/4  10/10
+  - [Security] No known unfixed vulnerabilities: 0/4  3/10 (10 = none known)
+  - [Security] No checked-in binaries: 4/4  10/10
+
+RED 51/100  request/request  (scorecard: yes)
+  High risk: abandoned, flagged, or too new and unproven to trust. Avoid installing unless you've reviewed the code yourself.
+  - [Maintained] Last code push: 0/12  796 days ago
+  - [Maintained] Steady activity (weeks with commits, last 90 days): 0/12  0/13 weeks, 0 commits
+  - [Maintained] More than one person: 8/8  343 contributors all-time, 0 active in 90 days
+  - [Maintained] Issues get closed: 4/7  3 issues/PRs closed in 90 days, 144 open (incl. PRs)
+  - [Maintained] Tagged releases: 0/6  no GitHub releases
+  - [Trust] Open-source license: 8/8  Apache-2.0
+  - [Trust] Community (stars / forks): 8/8  25,488 stars, 3,138 forks (stars can be bought; treat as weak)
+  - [Trust] Track record (repo age): 6/6  5748 days old
+  - [Trust] Not archived / not a bare fork: 3/3  original, active repo
+  - [Security] OpenSSF Scorecard overall: 6/18  3.6/10 (scanned 2026-10-12)
+  - [Security] No dangerous CI workflows: 2/4  not checked
+  - [Security] No known unfixed vulnerabilities: 2/4  not checked
+  - [Security] No checked-in binaries: 4/4  10/10
+
+AMBER 100/100  ggml-org/llama.cpp  (scorecard: no)
+  Proceed with care: try it in a throwaway environment and don't give it secrets or broad permissions.
+  - [Maintained] Last code push: 12/12  0 days ago
+  - [Maintained] Steady activity (weeks with commits, last 90 days): 12/12  13/13 weeks, 1653 commits
+  - [Maintained] More than one person: 8/8  2138 contributors all-time, 60 active in 90 days
+  - [Maintained] Issues get closed: 7/7  100+ issues/PRs closed in 90 days, 2550 open (incl. PRs)
+  - [Maintained] Tagged releases: 6/6  latest 0 days ago
+  - [Trust] Open-source license: 8/8  MIT
+  - [Trust] Community (stars / forks): 8/8  131,696 stars, 24,546 forks (stars can be bought; treat as weak)
+  - [Trust] Track record (repo age): 6/6  1318 days old
+  - [Trust] Not archived / not a bare fork: 3/3  original, active repo
+  - [Security] OpenSSF Scorecard: ?  No Scorecard scan exists for this repo yet (common for small/new projects). Security is UNKNOWN, not proven bad.
+
+AMBER 67/100  kividbio/kividb  (scorecard: no)
+  Proceed with care: try it in a throwaway environment and don't give it secrets or broad permissions.
+  - [Maintained] Last code push: 12/12  0 days ago
+  - [Maintained] Steady activity (weeks with commits, last 90 days): 1/12  1/13 weeks, 53 commits
+  - [Maintained] More than one person: 5/8  2 contributors all-time, 2 active in 90 days
+  - [Maintained] Issues get closed: 7/7  18 issues/PRs closed in 90 days, 14 open (incl. PRs)
+  - [Maintained] Tagged releases: 6/6  latest 2 days ago
+  - [Trust] Open-source license: 8/8  AGPL-3.0
+  - [Trust] Community (stars / forks): 5/8  137 stars, 2 forks (stars can be bought; treat as weak)
+  - [Trust] Track record (repo age): 0/6  3 days old
+  - [Trust] Not archived / not a bare fork: 3/3  original, active repo
+  - [Security] OpenSSF Scorecard: ?  No Scorecard scan exists for this repo yet (common for small/new projects). Security is UNKNOWN, not proven bad.
+
+AMBER 56/100  stratasite/0sql  (scorecard: no)
+  Proceed with care: try it in a throwaway environment and don't give it secrets or broad permissions.
+  - [Maintained] Last code push: 12/12  0 days ago
+  - [Maintained] Steady activity (weeks with commits, last 90 days): 3/12  3/13 weeks, 118 commits
+  - [Maintained] More than one person: 0/8  1 contributors all-time, 1 active in 90 days
+  - [Maintained] Issues get closed: 7/7  27 issues/PRs closed in 90 days, 2 open (incl. PRs)
+  - [Maintained] Tagged releases: 6/6  latest 1 days ago
+  - [Trust] Open-source license: 8/8  MIT
+  - [Trust] Community (stars / forks): 0/8  2 stars, 0 forks (stars can be bought; treat as weak)
+  - [Trust] Track record (repo age): 0/6  18 days old
+  - [Trust] Not archived / not a bare fork: 3/3  original, active repo
+  - [Security] OpenSSF Scorecard: ?  No Scorecard scan exists for this repo yet (common for small/new projects). Security is UNKNOWN, not proven bad.
+
+RED 43/100  RayenMlayeh/gsearch  (scorecard: no)
+  High risk: abandoned, flagged, or too new and unproven to trust. Avoid installing unless you've reviewed the code yourself.
+  - [Maintained] Last code push: 12/12  0 days ago
+  - [Maintained] Steady activity (weeks with commits, last 90 days): 1/12  1/13 weeks, 8 commits
+  - [Maintained] More than one person: 0/8  1 contributors all-time, 1 active in 90 days
+  - [Maintained] Issues get closed: 0/7  0 issues/PRs closed in 90 days, 9 open (incl. PRs)
+  - [Maintained] Tagged releases: 6/6  latest 0 days ago
+  - [Trust] Open-source license: 8/8  MIT
+  - [Trust] Community (stars / forks): 0/8  2 stars, 0 forks (stars can be bought; treat as weak)
+  - [Trust] Track record (repo age): 0/6  1 days old
+  - [Trust] Not archived / not a bare fork: 3/3  original, active repo
+  - [Security] OpenSSF Scorecard: ?  No Scorecard scan exists for this repo yet (common for small/new projects). Security is UNKNOWN, not proven bad.
+
+ERROR not-a-url: Paste a GitHub repo URL like https://github.com/owner/repo
+
+ERROR https://github.com/pearlcity-nonexistent/zzzz: Repo not found (or it's private).
